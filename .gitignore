@@ -1,0 +1,18 @@
+# ---------------------------------------------------------------------------
+# 从《Celeste》提取的原版资源（版权归 Maddy Makes Games / Extremely OK Games）
+# 仅用于本地运行 DEMO，不随仓库分发。
+# ---------------------------------------------------------------------------
+/assets/celeste/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# 工具输出 / 临时文件
+/tools/out/
+*.log
+
+# 编辑器
+.vscode/*
+!.vscode/settings.json

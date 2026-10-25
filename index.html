@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Celeste 对话复刻 · DEMO</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="stage-wrap">
+    <canvas id="stage" width="1920" height="1080"></canvas>
+  </div>
+
+  <div id="debug"></div>
+  <div id="overlay" class="visible">
+    <div class="panel">
+      <h1>加载中…</h1>
+      <p>正在读取提取资源</p>
+    </div>
+  </div>
+
+  <!-- 引擎（顺序不可调整） -->
+  <script src="js/config.js"></script>
+  <script src="js/font.js"></script>
+  <script src="js/fancytext.js"></script>
+  <script src="js/portrait.js"></script>
+  <script src="js/textbox.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/render.js"></script>
+
+  <!--
+    以下文件由 tools/extract_all.cmd 从本机 Celeste 提取生成，
+    含原版文本/字体/立绘/音频，已在 .gitignore 中排除。
+  -->
+  <script src="assets/celeste/manifest.js"></script>
+  <script src="assets/celeste/fonts/chinese.js"></script>
+  <script src="assets/celeste/portraits.js"></script>
+  <script src="assets/celeste/dialog/scenes.js"></script>
+  <script src="assets/celeste/audio/audio-data.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

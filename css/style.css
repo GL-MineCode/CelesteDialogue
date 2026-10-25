@@ -1,0 +1,177 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #05050a;
+  overflow: hidden;
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+  color: #f2f2f2;
+}
+
+#stage-wrap {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#stage {
+  display: block;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.85);
+  touch-action: none;
+  cursor: pointer;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(4, 6, 12, 0.94);
+  backdrop-filter: blur(3px);
+}
+
+#overlay.visible {
+  display: flex;
+}
+
+#overlay .panel {
+  max-width: 880px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+#overlay h1 {
+  margin: 0 0 12px;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#overlay p {
+  margin: 10px 0;
+  color: #cfd3dd;
+  font-size: 18px;
+}
+
+#overlay p.sub {
+  color: #9fb0c8;
+  font-size: 20px;
+}
+
+#overlay p.small {
+  margin-top: 18px;
+  font-size: 15px;
+  color: #7f8898;
+}
+
+#overlay ul {
+  display: inline-block;
+  text-align: left;
+  margin: 6px 0 12px;
+  padding-left: 22px;
+  color: #e6b0b0;
+}
+
+#overlay code {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+#overlay button {
+  margin: 18px 0 6px;
+  padding: 12px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 19px;
+  font-family: inherit;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+#overlay button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+/* 场景选择：竖排卡片 */
+#overlay .scenes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 22px auto 0;
+  max-width: 620px;
+}
+
+#overlay button.scene {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  grid-template-areas: "num name" "num src";
+  align-items: center;
+  gap: 0 12px;
+  margin: 0;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-align: left;
+  letter-spacing: 0;
+}
+
+#overlay button.scene .num {
+  grid-area: num;
+  font-size: 15px;
+  font-weight: 700;
+  color: #8fa6c4;
+  border: 1px solid rgba(143, 166, 196, 0.45);
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  line-height: 22px;
+  text-align: center;
+}
+
+#overlay button.scene .name {
+  grid-area: name;
+  font-size: 19px;
+}
+
+#overlay button.scene .src {
+  grid-area: src;
+  font-size: 12px;
+  color: #7f8898;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+#overlay.error h1 {
+  color: #ff9f9f;
+}
+
+#debug {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 30;
+  display: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #7dffc8;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+  pointer-events: none;
+  white-space: pre;
+}
