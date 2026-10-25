@@ -1,6 +1,6 @@
 # Celeste 对话复刻 DEMO
 
-![图标](demo_img\madeline_talk.png)
+![演示图](demo_img/madeline_talk.png)
 
 用原生 HTML + Canvas 复刻《Celeste》的对话系统：逐字显示、标点停顿、变速指令、波浪字、
 **角色立绘（原版 Sprite 动画）**、角色语音（原版 FMOD 事件渲染）、切换说话人时文本框收起/展开、
